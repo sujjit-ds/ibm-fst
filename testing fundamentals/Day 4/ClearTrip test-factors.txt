@@ -1,0 +1,9 @@
+Class: ECO, BSN, PECO, FC
+Stops: 1,2,3,4,5
+Dep: BLR, CHN, TRY, HYD, DEL, CBE, MBI, CLT
+Dest: BLR, CHN, TRY, HYD, DEL, CBE, MBI, CLT
+Avail:   Yes, No, WL
+
+if [Dest]=[Dep] then [Avail]="No";
+if [Dest] = "BLR" and [Dest] = "HYD" then [Avail] = "Yes";
+if [Stops] <= 2 then [Class] = "FC";
